@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GLITCHED TERMINAL</title>
+  <title>GLITCH INTRO</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
@@ -15,23 +15,18 @@
 
     body {
       background-color: #0a0000;
-      color: #ff4444;
       font-family: 'Share Tech Mono', monospace;
       height: 100vh;
+      overflow: hidden;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      position: relative;
-      flex-direction: column;
     }
 
     .glitch-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: 
         url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif'),
         linear-gradient(45deg, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -41,92 +36,21 @@
       z-index: 1;
     }
 
-    .terminal {
-      background: rgba(0, 0, 0, 0.9);
-      border: 2px solid #ff0000;
-      padding: 2rem;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
-      position: relative;
-      text-align: center;
-      z-index: 2;
-    }
-
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid #ff0000;
-      color: #ff4444;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1.2rem;
-      width: 300px;
-      padding: 0.5rem;
-      caret-color: #ff0000;
-      animation: blink 1s infinite;
-      margin-top: 20px;
-    }
-
-    @keyframes blink {
-      50% {
-        border-bottom-color: transparent;
-      }
-    }
-
     video {
       width: 100%;
-      max-width: 700px;
-      margin-top: 20px;
+      max-width: 800px;
+      z-index: 2;
       border: 2px solid red;
       box-shadow: 0 0 15px red;
-    }
-
-    .riddle {
-      display: none;
-      margin-top: 30px;
-      font-size: 1.1em;
-      color: #ff6666;
-      line-height: 1.6;
     }
   </style>
 </head>
 <body>
   <div class="glitch-overlay"></div>
 
-  <div class="terminal">
-    <h2>WELCOME TO THE SYSTEM</h2>
-    <video id="rickroll" autoplay muted loop>
-      <source src="you got rick rolled.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div>
-      <p style="margin-top: 20px;">READY FOR ANOTHER TEST?</p>
-      <input type="text" id="command-input" placeholder="Type yes or no..." />
-    </div>
-    <div class="riddle" id="riddle">
-      I am the shadow behind spoken breath,<br />
-      A silent pact with whispered death,<br />
-      I wear no form, yet shape your fate,<br />
-      Locked behind an unseen gate,<br />
-      I vanish if you dare to speak,<br />
-      What am I?
-    </div>
-  </div>
-
-  <script>
-    const input = document.getElementById("command-input");
-    const riddle = document.getElementById("riddle");
-
-    input.addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        const value = input.value.trim().toLowerCase();
-        if (value === "yes") {
-          riddle.style.display = "block";
-        } else {
-          input.value = "";
-        }
-      }
-    });
-  </script>
+  <video autoplay muted loop>
+    <source src="you got rick rolled.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 </body>
 </html>
